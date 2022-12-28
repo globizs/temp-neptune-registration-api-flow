@@ -1,7 +1,7 @@
 Neptune new member registration API flow:
 
 1. Verify sponsor:
-	GET sponsors/check?sponsor_no=27617
+	<b>GET</b> sponsors/check?sponsor_no=27617
 
 	Response:
 
@@ -21,7 +21,7 @@ Neptune new member registration API flow:
 		}
 
 2. Code verification:
-	POST sponsors/verify
+	<b>POST</b> sponsors/verify
 
 	Body:
 
@@ -51,7 +51,7 @@ Neptune new member registration API flow:
 		}
 
 3. User account registration:
-	POST: members
+	<b>POST</b>: members
 
 	Body:
 
@@ -80,7 +80,7 @@ Neptune new member registration API flow:
 		}
 
 4. User login:
-	POST: members/login
+	<b>POST</b>: members/login
 
 	Body:
 
@@ -113,7 +113,7 @@ Neptune new member registration API flow:
 		}
 
 5. Fetch Neptune unit details:
-	GET: neptune/unit
+	<b>POST</b>: neptune/unit
 
 	Response:
 
@@ -125,7 +125,7 @@ Neptune new member registration API flow:
 		}
 
 6. Fetch Neptune bank account details:
-	GET: neptune/bankaccount
+	<b>POST</b>: neptune/bankaccount
 
 	Response:
 
