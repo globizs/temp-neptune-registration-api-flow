@@ -101,6 +101,7 @@ Neptune new member registration API flow:
 		{
 			"success": true,
 			"message": "Login successful",
+			"token": "akusndauskndasudnas9d8ashd9ash8dad",
 			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
@@ -109,6 +110,7 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "Invalid member ID or password",
+			"token": null,
 			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
@@ -117,6 +119,7 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "This account has been suspended",
+			"token": null,
 			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
