@@ -90,6 +90,7 @@ Neptune new member registration API flow:
 		}
 
 	Response:
+
 		{
 			"success": true,
 			"message": "Login successful",
