@@ -51,7 +51,9 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "Verificaiton code has expired",
-			"token": null
+			"token": null,
+			"left_node": null,
+			"right_node": null
 		}
 
 3. User account registration:
@@ -99,6 +101,7 @@ Neptune new member registration API flow:
 		{
 			"success": true,
 			"message": "Login successful",
+			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
 		}
@@ -106,6 +109,7 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "Invalid member ID or password",
+			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
 		}
@@ -113,6 +117,7 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "This account has been suspended",
+			"unit_bought": false,
 			"membership_confirmed": false,
 			"kyc": false
 		}
