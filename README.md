@@ -35,7 +35,9 @@ Neptune new member registration API flow:
 		{
 			"success": true,
 			"message": "Sponsor verification successful",
-			"token": "uas987asbukdkasjd_asd9823hkksnkadad78"
+			"token": "uas987asbukdkasjd_asd9823hkksnkadad78",
+			"left_node": true,
+			"right_node": true
 		}
 
 		{
@@ -59,7 +61,8 @@ Neptune new member registration API flow:
 			"token": "uas987asbukdkasjd_asd9823hkksnkadad78",
 			"name": "Sushil Kh",
 			"email": "sushil@globizs.com",
-			"phone": 7629865803
+			"phone": 7629865803,
+			"node": "left"
 		}
 
 	Response:
