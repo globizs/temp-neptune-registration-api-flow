@@ -43,7 +43,9 @@ Neptune new member registration API flow:
 		{
 			"success": false,
 			"message": "Invalid verificaiton code",
-			"token": null
+			"token": null,
+			"left_node": null,
+			"right_node": null
 		}
 
 		{
