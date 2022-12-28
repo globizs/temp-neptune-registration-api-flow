@@ -4,6 +4,7 @@ Neptune new member registration API flow:
 	GET sponsors/check?sponsor_no=27617
 
 	Response:
+
 		{
 			"success": true,
 			"message": "Verification code has been sent to your sponsor's email ending with ******pam@gmail.com & mobile number ending with *******893"
@@ -23,12 +24,14 @@ Neptune new member registration API flow:
 	POST sponsors/verify
 
 	Body:
+
 		{
 			"sponsor_id": 27617,
 			"code": 123456
 		}
 
 	Response:
+
 		{
 			"success": true,
 			"message": "Sponsor verification successful",
@@ -51,6 +54,7 @@ Neptune new member registration API flow:
 	POST: members
 
 	Body:
+
 		{
 			"token": "uas987asbukdkasjd_asd9823hkksnkadad78",
 			"name": "Sushil Kh",
@@ -59,6 +63,7 @@ Neptune new member registration API flow:
 		}
 
 	Response:
+
 		{
 			"success": true,
 			"message": "Login credentials have been sent to your email address. Please check your email to proceed."
@@ -78,6 +83,7 @@ Neptune new member registration API flow:
 	POST: members/login
 
 	Body:
+
 		{
 			"username": "291029",
 			"password": "98u982u938u223423kn"
@@ -106,9 +112,10 @@ Neptune new member registration API flow:
 		}
 
 5. Fetch Neptune unit details:
-	GET: unit
+	GET: neptune/unit
 
 	Response:
+
 		{
 			"min": 1000,
 			"max": 1000000000,
@@ -116,4 +123,17 @@ Neptune new member registration API flow:
 			"inr": 0.034
 		}
 
-6. 
+6. Fetch Neptune bank account details:
+	GET: neptune/bankaccount
+
+	Response:
+
+		{
+			"bank_name": "SBI",
+			"ifsc": "SBIN0007440",
+			"bank_branch": "Paona Bazar",
+			"account_no": 31254795440,
+			"account_holder_name": "NEPTUNE MLM"
+		}
+
+7. 
