@@ -126,7 +126,7 @@ Neptune new member registration API flow:
 		}
 
 5. Fetch Neptune unit details:
-	<b>POST</b>: neptune/unit
+	<b>GET</b>: neptune/unit
 
 	Response:
 
@@ -134,11 +134,16 @@ Neptune new member registration API flow:
 			"min": 1000,
 			"max": 1000000000,
 			"usd": 0.005,
-			"inr": 0.034
+			"inr": 0.034,
+			"payment_modes": [{
+				"id": 1, name: "With cash"
+			}, {
+				"id": 2, name: "Bank transfer"
+			}]
 		}
 
 6. Fetch Neptune bank account details:
-	<b>POST</b>: neptune/bankaccount
+	<b>GET</b>: neptune/bankaccount
 
 	Response:
 
@@ -150,4 +155,58 @@ Neptune new member registration API flow:
 			"account_holder_name": "NEPTUNE MLM"
 		}
 
-7. 
+7. Buy unit:
+	<b>POST</b>: neptune/buy
+
+	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body <b>(Form data)</b>:
+
+		"units": 2000
+		"payment_mode": 2
+		"reference_no": "IKUJNASSDF9390293"
+		"receipt": ** MULTIPART FILE **
+
+	Response:
+
+		{
+			"success": true,
+			"message": "Success! Please wait while we verify your payment"
+		}
+
+8. Get dashboard:
+	<b>GET</b>: member/dashboard
+
+	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
+			"success": true,
+			"unit_bought": true,
+			"membership_confirmed": false,
+			"kyc": false,
+			"name": "Sushil Kh",
+			"member_id": "291029",
+			"unit_balance": 0,
+			"e_pocket": 0,
+			"images": [{
+				"url": "https://mlm.neptunetourist.com/images/290nn32842342.jpg"
+			}, {
+				"url": "https://mlm.neptunetourist.com/images/87yh4sh348943.jpg"
+			}, {
+				"url": "https://mlm.neptunetourist.com/images/90jkh3675jhbs.jpg"
+			}]
+		}
+
+9. Neptune rate:
+	<b>GET</b>: neptune/rate
+
+	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
+			"usd": 0.005,
+			"inr": 0.034
+		}
