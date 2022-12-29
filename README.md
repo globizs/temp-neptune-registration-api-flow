@@ -128,6 +128,8 @@ Neptune new member registration API flow:
 5. Fetch Neptune unit details:
 	<b>GET</b>: neptune/unit
 
+	<div>Authorization: Bearer <b>akusndauskndasudnas9d8ashd9ash8dad</b></div>
+
 	Response:
 
 		{
@@ -145,6 +147,8 @@ Neptune new member registration API flow:
 6. Fetch Neptune bank account details:
 	<b>GET</b>: neptune/bankaccount
 
+	<div>Authorization: Bearer <b>akusndauskndasudnas9d8ashd9ash8dad</b></div>
+
 	Response:
 
 		{
@@ -158,7 +162,7 @@ Neptune new member registration API flow:
 7. Buy unit:
 	<b>POST</b>: neptune/buy
 
-	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+	<div>Authorization: Bearer <b>akusndauskndasudnas9d8ashd9ash8dad</b></div>
 
 	Body <b>(Form data)</b>:
 
@@ -177,7 +181,7 @@ Neptune new member registration API flow:
 8. Get dashboard:
 	<b>GET</b>: member/dashboard
 
-	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+	<div>Authorization: Bearer <b>akusndauskndasudnas9d8ashd9ash8dad</b></div>
 
 	Response:
 
@@ -202,7 +206,7 @@ Neptune new member registration API flow:
 9. Neptune rate:
 	<b>GET</b>: neptune/rate
 
-	<div>Authorization: Bearer akusndauskndasudnas9d8ashd9ash8dad</div>
+	<div>Authorization: Bearer <b>akusndauskndasudnas9d8ashd9ash8dad</b></div>
 
 	Response:
 
