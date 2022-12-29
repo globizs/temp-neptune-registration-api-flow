@@ -102,27 +102,21 @@ Neptune new member registration API flow:
 			"success": true,
 			"message": "Login successful",
 			"token": "akusndauskndasudnas9d8ashd9ash8dad",
-			"unit_bought": false,
-			"membership_confirmed": false,
-			"kyc": false
+			"unit_bought": false
 		}
 
 		{
 			"success": false,
 			"message": "Invalid member ID or password",
 			"token": null,
-			"unit_bought": false,
-			"membership_confirmed": false,
-			"kyc": false
+			"unit_bought": false
 		}
 
 		{
 			"success": false,
 			"message": "This account has been suspended",
 			"token": null,
-			"unit_bought": false,
-			"membership_confirmed": false,
-			"kyc": false
+			"unit_bought": false
 		}
 
 5. Fetch Neptune unit details:
@@ -187,13 +181,24 @@ Neptune new member registration API flow:
 
 		{
 			"success": true,
-			"unit_bought": true,
+			"member_id": "291029",
+			"name": "Sushil Kh",
 			"membership_confirmed": false,
 			"kyc": false,
-			"name": "Sushil Kh",
-			"member_id": "291029",
 			"unit_balance": 0,
-			"e_pocket": 0,
+			"e_pocket_balance": 0,
+			"usd": 0.005,
+			"inr": 0.034
+		}
+
+9. Get dashboard images:
+	<b>GET</b>: neptune/dashboard-images
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
 			"images": [{
 				"url": "https://mlm.neptunetourist.com/images/290nn32842342.jpg"
 			}, {
@@ -201,16 +206,4 @@ Neptune new member registration API flow:
 			}, {
 				"url": "https://mlm.neptunetourist.com/images/90jkh3675jhbs.jpg"
 			}]
-		}
-
-9. Neptune rate:
-	<b>GET</b>: neptune/rate
-
-	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
-
-	Response:
-
-		{
-			"usd": 0.005,
-			"inr": 0.034
 		}
