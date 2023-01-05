@@ -132,9 +132,9 @@ Neptune new member registration API flow:
 			"usd": 0.005,
 			"inr": 0.034,
 			"payment_modes": [{
-				"id": 1, name: "With cash"
+				"id": 1, name: "With cash", "receipt_required": false
 			}, {
-				"id": 2, name: "Bank transfer"
+				"id": 2, name: "Bank transfer", "receipt_required": true
 			}]
 		}
 
@@ -207,3 +207,153 @@ Neptune new member registration API flow:
 				"url": "https://mlm.neptunetourist.com/images/90jkh3675jhbs.jpg"
 			}]
 		}
+
+10. Get ID proof types
+	<b>GET</b>: lists/id-proof-types
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 1, "name": "AADHAAR Card"
+		}, {
+			"id": 2, "name": "PAN Card"
+		}, {
+			"id": 3, "name": "Driving License"
+		}, {
+			"id": 4, "name": "Passport"
+		}]
+
+11. Get countries
+	<b>GET</b>: lists/countries
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 1, "name": "India"
+		}, {
+			"id": 2, "name": "USA"
+		}, {
+			"id": 3, "name": "UK"
+		}, {
+			"id": 4, "name": "Japan"
+		}]
+
+12. Get states
+	<b>GET</b>: lists/states?country_id=1
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 1, "name": "Andhra Pradesh"
+		}, {
+			"id": 2, "name": "Arunachal Pradesh"
+		}, {
+			"id": 3, "name": "Bihar"
+		}, {
+			"id": 4, "name": "Chattisgarh"
+		}]
+
+13. Get districts
+	<b>GET</b>: lists/districts?state_id=21
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 1, "name": "Bishnupur"
+		}, {
+			"id": 2, "name": "Chandel"
+		}, {
+			"id": 3, "name": "Churachandpur"
+		}, {
+			"id": 4, "name": "Imphal East"
+		}]
+
+14. Get KYC profile:
+	<b>GET</b>: kyc/index
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
+			"id_proof_type_id": 2,
+			"id_proof_type": "PAN Card",
+			"id_no": "OLFPS3023P",
+			"address": "Lane no. 2, Kwakeithel Thokchom Leikai",
+			"landmark": "Kwakeithel UPHC",
+			"country_id": 21,
+			"country": "India",
+			"state_id": 23,
+			"state": "Manipur",
+			"district_id": 234,
+			"district": "Imphal West"
+			"pin_code": 795001,
+			"id_proof_file": "https://asjdnksadsad.jpg",
+			"address_proof_file": "https://asjdnksadsad.jpg",
+		}
+
+15. Update KYC:
+	<b>PUT</b>: kyc/data
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body:
+
+		{
+			"id_proof_type_id": 2,
+			"id_no": "OLFPS3023P",
+			"address": "Lane no. 2, Kwakeithel Thokchom Leikai",
+			"landmark": "Kwakeithel UPHC",
+			"country_id": 21,
+			"state_id": 23,
+			"district_id": 234,
+			"pin_code": 795001
+		}
+
+	Response:
+
+		{
+			"success": true,
+			"message": "Successfully updated"
+		}
+
+16. Update KYC id-proof file:
+	<b>PUT</b>: kyc/id-proof
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body <b>(Form data)</b>:
+
+		"id_proof_file": ** MULTIPART FILE **
+
+	Response:
+
+		{
+			"success": true,
+			"message": "ID proof document successfully updated"
+		}
+
+17. Update KYC address proof file:
+	<b>PUT</b>: kyc/address-proof
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body <b>(Form data)</b>:
+
+		"address_proof_file": ** MULTIPART FILE **
+
+	Response:
+
+		{
+			"success": true,
+			"message": "Address proof document successfully updated"
+		}
+
