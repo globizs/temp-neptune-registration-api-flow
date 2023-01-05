@@ -259,7 +259,7 @@ Neptune new member registration API flow:
 			"id": 4, "name": "Chattisgarh"
 		}]
 
-13. Get districts
+13. <b>[CANCELLED]</b> Get districts
 	<b>GET</b>: lists/districts?state_id=21
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
@@ -293,8 +293,7 @@ Neptune new member registration API flow:
 			"country": "India",
 			"state_id": 23,
 			"state": "Manipur",
-			"district_id": 234,
-			"district": "Imphal West"
+			"district: "Imphal West",
 			"pin_code": 795001,
 			"id_proof_file": "https://asjdnksadsad.jpg",
 			"address_proof_file": "https://asjdnksadsad.jpg",
@@ -314,7 +313,7 @@ Neptune new member registration API flow:
 			"landmark": "Kwakeithel UPHC",
 			"country_id": 21,
 			"state_id": 23,
-			"district_id": 234,
+			"district": "Imphal West",
 			"pin_code": 795001
 		}
 
