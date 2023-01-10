@@ -356,3 +356,99 @@ Neptune new member registration API flow:
 			"message": "Address proof document successfully updated"
 		}
 
+18. Get transferable amount
+	<b>GET</b>: transfer/available
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
+			"transferable_amount": 200
+		}
+
+
+19. Get member details (for transfer)
+	<b>GET</b>: members/{{ member_id }}
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		{
+			"success": true,
+			"message": "Member details"
+			"member_id": 745215,
+			"name": "Khundrakpam Sushil",
+			"phone": *******803
+		}
+
+		{
+			"success": false,
+			"message": "Invalid member ID",
+			"member_id": null,
+			"name": null,
+			"phone": null
+		}
+
+20. Send OTP to for transfer request (valid for 15 minutes)
+	<b>POST</b>: transfer/send-otp
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body:
+
+		{
+			"member_id": 745215,
+		}
+
+	Response:
+
+		{
+			"success": true,
+			"message": "OTP has been sent to the member's mobile number *******803. Valid for 15 minutes"
+		}
+
+		{
+			"success": false,
+			"message": "Invalid member ID"
+		}
+
+21. Transfer amount
+	<b>POST</b>: transfer
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Body:
+
+		{
+			"member_id": 745215,
+			"otp": 123456,
+			"amount": 50
+		}
+
+	Response:
+		{
+			"success": true,
+			"message": "Amount has been successfully transferred to member ID: 745215"
+		}
+
+		{
+			"success": false,
+			"message": "Failed to transfer amount. Reason: Invalid transfer amount/balance"
+		}
+
+		{
+			"success": false,
+			"message": "Failed to transfer amount. Reason: Invalid member ID"
+		}
+
+		{
+			"success": false,
+			"message": "Failed to transfer amount. Reason: Invalid OTP"
+		}
+
+		{
+			"success": false,
+			"message": "Failed to transfer amount. Reason: OTP has expired"
+		}
