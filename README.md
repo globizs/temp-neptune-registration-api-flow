@@ -357,7 +357,7 @@ Neptune new member registration API flow:
 		}
 
 18. Get transferable amount
-	<b>GET</b>: transfer/available
+	<b>GET</b>: transfers/available
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
 
@@ -392,7 +392,7 @@ Neptune new member registration API flow:
 		}
 
 20. Send OTP to for transfer request (valid for 15 minutes)
-	<b>POST</b>: transfer/send-otp
+	<b>POST</b>: transfers/send-otp
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
 
@@ -415,7 +415,7 @@ Neptune new member registration API flow:
 		}
 
 21. Transfer amount
-	<b>POST</b>: transfer
+	<b>POST</b>: transfers
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
 
@@ -452,3 +452,16 @@ Neptune new member registration API flow:
 			"success": false,
 			"message": "Failed to transfer amount. Reason: OTP has expired"
 		}
+
+22. Transfers history
+	<b>GET</b>: transfers?_pageno=1&_limit=10
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 234, "member_id": 745215, "transfer_amount": 50, "transfer_date": "2022-12-25", "member_name": "Khundrakpam Sushil"
+		}, {
+			"id": 504, "member_id": 745221, "transfer_amount": 50, "transfer_date": "2022-11-10", "member_name": "Mr. Jugindro"
+		}]
