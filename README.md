@@ -428,6 +428,7 @@ Neptune new member registration API flow:
 		}
 
 	Response:
+
 		{
 			"success": true,
 			"message": "Amount has been successfully transferred to member ID: 745215"
@@ -454,7 +455,7 @@ Neptune new member registration API flow:
 		}
 
 22. Transfers history
-	<b>GET</b>: transfers?_pageno=1&_limit=10
+	<b>GET</b>: transfers?page=1&limit=10
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
 
