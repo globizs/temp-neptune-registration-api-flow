@@ -364,7 +364,8 @@ Neptune new member registration API flow:
 	Response:
 
 		{
-			"transferable_amount": 200
+			"e_pocket_transferable_amount": 200,
+			"e_wallet_transferable_amount": 100
 		}
 
 
@@ -380,7 +381,7 @@ Neptune new member registration API flow:
 			"message": "Member details"
 			"member_id": 745215,
 			"name": "Khundrakpam Sushil",
-			"phone": *******803
+			"phone": "*******803"
 		}
 
 		{
@@ -406,7 +407,7 @@ Neptune new member registration API flow:
 
 		{
 			"success": true,
-			"message": "OTP has been sent to the member's mobile number *******803. Valid for 15 minutes"
+			"message": "OTP has been sent to the your mobile number and email. The code is valid for 15 minutes"
 		}
 
 		{
@@ -424,14 +425,15 @@ Neptune new member registration API flow:
 		{
 			"member_id": 745215,
 			"otp": 123456,
-			"amount": 50
+			"amount": 50,
+			"account_type": "e_pocket"
 		}
 
 	Response:
 
 		{
 			"success": true,
-			"message": "Amount has been successfully transferred to member ID: 745215"
+			"message": "Amount has been successfully transferred from your e-pocket to member ID: 745215"
 		}
 
 		{
@@ -454,15 +456,28 @@ Neptune new member registration API flow:
 			"message": "Failed to transfer amount. Reason: OTP has expired"
 		}
 
-22. Transfers history
-	<b>GET</b>: transfers?page=1&limit=10
+22. Transfers history (from)
+	<b>GET</b>: transfers?type=from&page=1&limit=10
 
 	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
 
 	Response:
 
 		[{
-			"id": 234, "member_id": 745215, "transfer_amount": 50, "transfer_date": "2022-12-25", "member_name": "Khundrakpam Sushil"
+			"id": 234, "member_id": 745215, "transfer_unit": 50, "account_type": "e_pocket", "transfer_date": "2022-12-25", "member_name": "Khundrakpam Sushil"
 		}, {
-			"id": 504, "member_id": 745221, "transfer_amount": 50, "transfer_date": "2022-11-10", "member_name": "Mr. Jugindro"
+			"id": 504, "member_id": 745221, "transfer_unit": 50, "account_type": "e_pocket", "transfer_date": "2022-11-10", "member_name": "Mr. Jugindro"
+		}]
+
+23. Transfers history (to)
+	<b>GET</b>: transfers?type=to&page=1&limit=10
+
+	<div><b>Authorization: Bearer </b>akusndauskndasudnas9d8ashd9ash8dad</div>
+
+	Response:
+
+		[{
+			"id": 234, "member_id": 745215, "transfer_unit": 50, "account_type": "e_pocket", "transfer_date": "2022-12-25", "member_name": "Khundrakpam Sushil"
+		}, {
+			"id": 504, "member_id": 745221, "transfer_unit": 50, "account_type": "e_pocket", "transfer_date": "2022-11-10", "member_name": "Mr. Jugindro"
 		}]
